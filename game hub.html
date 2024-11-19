@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+
+        
+        * <style>
+            .game-card img {
+                width: 100%;
+                max-width: 250px; 
+                max-height: 150px; 
+                object-fit: cover; 
+                border-radius: 15px;
+                transition: transform 0.3s;
+            }
+        
+        
+        
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+
+            
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b1b1b;
+            color: #e0f7fa;
+            transition: background-color 0.3s ease;
+        }
+        
+        header {
+            background: linear-gradient(to right, #f2090d, #00ffff);
+            padding: 30px 0;
+            text-align: center;
+            animation: fadeIn 1s;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #ed0b0b, 0 0 30px #00ffcc;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); color: #da0d0d; }
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 10px;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ff0037;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        section {
+            margin: 20px 0;
+        }
+        
+        h2 {
+            color: #00ffcc;
+            text-shadow: 2px 2px 10px #00ffff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+        }
+        
+        .game-card {
+            background: #282828;
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .game-card h3 {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #d60c0c;
+            text-shadow: 0px 0px 10px #00ffcc;
+            margin-top: 10px;
+            animation: wave 1.5s infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #00ffcc;
+            color: #1b1b1b;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: box-shadow 0.3s, transform 0.3s;
+            text-shadow: 1px 1px 5px #e61616;
+        }
+        
+        .button:hover {
+            background: #120809;
+            box-shadow: 0px 0px 15px #d20909;
+            transform: scale(1.1);
+        }
+        
+        .reviews {
+            margin-top: 15px;
+            text-align: left;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #690fe8, #00ffff);
+            color: #e0f7fa;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 1s;
+        }
+        
+        footer a {
+            color: #ffeb3b;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎮 Welcome to Game Hub 🎮</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Featured Games</h2>
+            <div class="game-container" id="game-container">
+                <!-- Game Cards will be dynamically injected here -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Game Hub is your go-to platform for the latest and greatest games. We aim to bring gamers together in a vibrant community. Join us for a gaming adventure!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at: <a href="mailto:ganapavarapupavan3@gmail.com">ganapavarapupavan3@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Game Hub. Thank you visting| <a href="#contact">visit again</a></p>
+    </footer>
+</body>
+</html>
+
+   
+    
+
+      
+
+    <script>
+        const games = [
+            {
+                id: 1,
+                title: "2048",
+                description: "Join the fun in this addictive sliding puzzle game!",
+                img: "https://imgs.search.brave.com/SBHc59F_NqvzLLQlgF7mRPxuj63EoLo6KsaAupFlfxE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly8yMDQ4/Lm5pbmphL2ZpbGVz/Lzc4NTUwMGI2Zjlh/YmI5OTcuODM3MDA5/MzMvMjAucG5n",
+                playUrl: "https://2048-game.com/",
+                downloadUrl: "https://2048-game.com/",
+                reviews: []
+            },
+            {
+                id: 2,
+                title: "Among Us",
+                description: "Work together with your team to complete tasks...or sabotage them!",
+                img: "https://cdn2.unrealengine.com/egs-amongus-innersloth-s6-1200x1600-675403712.jpg",
+                playUrl: "https://store.steampowered.com/app/945360/Among_Us/",
+                downloadUrl: "https://store.steampowered.com/app/945360/Among_Us/",
+                reviews: []
+            },
+            {
+                id: 3,
+                title: "Minecraft",
+                description: "Build and explore your own worlds in this popular sandbox game!",
+                img: "https://4.bp.blogspot.com/-dfIjn7Zb4z0/VxiTJYkefaI/AAAAAAAAIqE/JVm-nzV4z-keuCY63LLBR7svGUyGKiORQCLcB/s1600/Minecraft.jpg",
+                playUrl: "https://www.minecraft.net/en-us",
+                downloadUrl: "https://www.minecraft.net/en-us/download",
+                reviews: []
+            },
+            {
+                id: 4,
+                title: "Call of Duty: Warzone",
+                description: "Battle it out in this fast-paced battle royale game!",
+                img: "https://tse2.mm.bing.net/th?id=OIP.asTGFPZgpZXYfHfOnXUmRgHaHa&pid=Api&P=0&h=180",
+                playUrl: "https://www.callofduty.com/warzone",
+                downloadUrl: "https://www.callofduty.com/warzone",
+                reviews: []
+            },
+            {
+                id: 5,
+                title: "Fortnite",
+                description: "Join the battle to be the last one standing in this popular battle royale!",
+                img: "https://tse2.mm.bing.net/th?id=OIP.aXQlrFW57K-ldKHwFn2ESQHaEK&pid=Api&P=0&h=180",
+                playUrl: "https://www.epicgames.com/fortnite/en-US/home",
+                downloadUrl: "https://www.epicgames.com/fortnite/en-US/download",
+                reviews: []
+            },
+            {
+                id: 6,
+                title: "League of Legends",
+                description: "Join the fight in this popular MOBA game with millions of players!",
+                img: "https://tse2.mm.bing.net/th?id=OIP.MGnOIybXnvMKQSbRVdMuZwHaEK&pid=Api&P=0&h=180",
+                playUrl: "https://www.leagueoflegends.com/en-us/",
+                downloadUrl: "https://www.leagueoflegends.com/en-us/download/",
+                reviews: []
+            },
+        ];
+
+        function displayGames() {
+            const container = document.getElementById('game-container');
+            container.innerHTML = ''; // Clear previous content
+            games.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+                gameCard.innerHTML = `
+                    <img src="${game.img}" alt="${game.title}">
+                    <h3>${game.title}</h3>
+                    <p>${game.description}</p>
+                    <a href="${game.downloadUrl}" class="button" target="_blank">Download Now</a>
+                    <a href="${game.playUrl}" class="button" target="_blank">Play Online</a>
+                    <div class="reviews">
+                        <h4>Reviews:</h4>
+                        <div id="reviews-${game.id}">
+                            ${game.reviews.length > 0 ? game.reviews.map(review => `<p>${review}</p>`).join('') : '<p>No reviews yet.</p>'}
+                        </div>
+                        <div class="review-form">
+                            <input type="text" id="review-input-${game.id}" placeholder="Write a review...">
+                            <button onclick="submitReview(${game.id})">Submit</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(gameCard);
+            });
+        }
+
+        function submitReview(gameId) {
+            const reviewInput = document.getElementById(`review-input-${gameId}`);
+            const reviewText = reviewInput.value;
+            if (reviewText) {
+                const game = games.find(g => g.id === gameId);
+                game.reviews.push(reviewText);
+                displayGames(); // Re-render games to show new review
+                reviewInput.value = ''; // Clear input
+            }
+        }
+
+        displayGames();
+    </script>
+</body>
+</html> 
